@@ -129,8 +129,8 @@ end
 map("n", "<leader>uT", function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, { desc = "Toggle Treesitter Highlight" })
 
 -- Directory Navigation 
--- map("<leader>m", "NvimTreeFocus", { desc = "Toggle NvimTree" })
--- map("<leader>e", "NvimTreeToggle", { desc = "Toggle NvimTree" })
+map("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })
+map("n", "<leader>m", ":NvimTreeFocus<cr>", { desc = "Focus NvimTree" })
 
 -- lazygit
 map("n", "<leader>gg", function() Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
