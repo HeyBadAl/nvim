@@ -10,11 +10,43 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    -- import/override with your plugins
+
+    -- NOTE: dap { extras }
+    { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.dap.nlua" },
+
+    -- HACK: go language
+    { import = "lazyvim.plugins.extras.lang.go" },
+
+    -- docker
+    { import = "lazyvim.plugins.extras.lang.docker" },
+
+    -- markdown
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+
+    -- python
+    { import = "lazyvim.plugins.extras.lang.python" },
+
+    -- terraform
+    { import = "lazyvim.plugins.extras.lang.terraform" },
+
+    -- Typescript
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+
+    -- YAML
+    { import = "lazyvim.plugins.extras.lang.yaml" },
+
+    -- tailwind-css
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+
+    -- ESLINT
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+
+    { import = "lazyvim.plugins.extras.ui.edgy" },
+
+    -- neotest
+    { import = "lazyvim.plugins.extras.test.core" },
+
     { import = "plugins" },
   },
   defaults = {
