@@ -1,3 +1,4 @@
+local Util = require("lazyvim.util")
 return {
   { import = "plugins.extras.ui.ui" },
 
@@ -7,6 +8,12 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      local lualine_require = require("lualine_require")
+      lualine_require.require = require
+
+      local icons = require("lazyvim.config").icons
+
+      vim.o.laststatus = vim.g.lualine_laststatus
       return {
         options = {
           theme = "auto",
@@ -15,14 +22,54 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "buffers" },
-          lualine_c = { "branch", "diff", "diagnostics" },
-          lualine_x = {
-            { "filetype", icon_only = true, separator = " ", padding = { left = 1, right = 1 } },
+          lualine_b = {
+            "buffers",
           },
-          lualine_y = { "progress" },
+          lualine_c = {
+            "branch",
+            {
+              "diff",
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
+              source = function()
+                local gitsigns = vim.b.gitsigns_status_dict
+                if gitsigns then
+                  return {
+                    added = gitsigns.added,
+                    modified = gitsigns.changed,
+                    removed = gitsigns.removed,
+                  }
+                end
+              end,
+            },
+            {
+              "diagnostics",
+              symbols = {
+                error = icons.diagnostics.Error,
+                warn = icons.diagnostics.Warn,
+                info = icons.diagnostics.Info,
+                hint = icons.diagnostics.Hint,
+              },
+            },
+          },
+          lualine_x = {
+            {
+              function()
+                return "  " .. require("dap").status()
+              end,
+              cond = function()
+                return package.loaded["dap"] and require("dap").status() ~= ""
+              end,
+            },
+          },
+          lualine_y = { Util.lualine.root_dir() },
           lualine_z = { "location" },
         },
+
+        -- table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium")),
       }
     end,
   },
