@@ -1,7 +1,7 @@
 local actions = require("telescope.actions")
 local entry_display = require("telescope.pickers.entry_display")
 
-local path_display = { shorten = { len = 3 } }
+local path_display = { shorten = { len = 5 } }
 
 local grep_picker = {
   preview = true,
@@ -20,12 +20,12 @@ return {
         selection_caret = " ",
         mappings = {
           i = {
-            ["<Tab>"] = actions.move_selection_next,
-            ["<S-Tab>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
           },
           n = {
-            ["<Tab>"] = actions.move_selection_next,
-            ["<S-Tab>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
           },
         },
         file_ignore_patterns = {
