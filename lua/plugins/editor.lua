@@ -135,41 +135,41 @@ return {
       end,
     },
   },
-
-  -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require("telescope").setup({
-        defaults = {
-          prompt_prefix = "󱞩 ",
-          selection_caret = " ",
-          path_display = { "smart" },
-          file_ignore_patterns = {
-            ".git",
-          },
-          -- -- include .github directory
-          -- file_include_patterns = {
-          -- 	".github/**",
-          -- 	".gitignore",
-          -- },
-        },
-        pickers = {
-          find_files = {
-            theme = "dropdown",
-            previewer = true,
-            hidden = true,
-          },
-          live_grep = {
-            theme = "dropdown",
-            previewer = true,
-          },
-          buffers = {
-            theme = "dropdown",
-            previewer = true,
-          },
-        },
-      })
-    end,
-  },
+  --
+  -- -- Telescope
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   config = function()
+  --     require("telescope").setup({
+  --       defaults = {
+  --         prompt_prefix = "󱞩 ",
+  --         selection_caret = " ",
+  --         path_display = { "smart" },
+  --         file_ignore_patterns = {
+  --           ".git",
+  --         },
+  --         -- -- include .github directory
+  --         -- file_include_patterns = {
+  --         -- 	".github/**",
+  --         -- 	".gitignore",
+  --         -- },
+  --       },
+  --       pickers = {
+  --         find_files = {
+  --           theme = "dropdown",
+  --           previewer = true,
+  --           hidden = true,
+  --         },
+  --         live_grep = {
+  --           theme = "dropdown",
+  --           previewer = true,
+  --         },
+  --         buffers = {
+  --           theme = "dropdown",
+  --           previewer = true,
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
 }
