@@ -57,6 +57,14 @@ return {
     end,
   },
 
-  -- mini-animate
-  { "echasnovski/mini.animate", enabled = false },
+  -- notify
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      timeout = 3000,
+      background_colour = "#000000",
+      stages = "fade",
+      render = "compact",
+    },
+  },
 }
