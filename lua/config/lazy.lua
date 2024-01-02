@@ -36,13 +36,20 @@ require("lazy").setup({
     -- YAML
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
+    -- JSON
+    { import = "lazyvim.plugins.extras.lang.json" },
+
     -- tailwind-css
     { import = "lazyvim.plugins.extras.lang.tailwind" },
 
     -- ESLINT
     { import = "lazyvim.plugins.extras.linting.eslint" },
+    -- prettier
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
 
     { import = "lazyvim.plugins.extras.ui.edgy" },
+
+    { import = "lazyvim.plugins.extras.vscode" },
 
     -- neotest
     { import = "lazyvim.plugins.extras.test.core" },
