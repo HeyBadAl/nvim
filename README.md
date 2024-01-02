@@ -20,3 +20,5 @@ All plugins `plugins/`
 - [LazyVim Keymaps](https://www.lazyvim.org/keymaps)
 - [Personal Keymaps](https://github.com/HeyBadAl/nvim/blob/main/lua/keymaps.lua)
 - Press the `<space>` key to check all
+
+Happy coding!
