@@ -12,6 +12,7 @@ return {
 
         integrations = {
           alpha = true,
+          dashboard = true,
           leap = true,
           indent_blankline = true,
           mason = true,

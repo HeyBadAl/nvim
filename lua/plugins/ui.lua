@@ -16,12 +16,11 @@ return {
       vim.o.laststatus = vim.g.lualine_laststatus
       return {
         options = {
-          theme = "auto",
+          theme = "catppuccin",
           globalstatus = true,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
         },
         sections = {
-          lualine_a = { "mode" },
           lualine_b = {
             "buffers",
           },
@@ -56,6 +55,18 @@ return {
             },
           },
           lualine_x = {
+            -- add codeium
+            {
+              function()
+                return require("codeium").status()
+              end,
+              cond = function()
+                return package.loaded["codeium"] and require("codeium").status() ~= ""
+              end,
+              color = Util.ui.fg("Debug"),
+            },
+          },
+          lualine_y = {
             {
               function()
                 return "  " .. require("dap").status()
@@ -63,13 +74,12 @@ return {
               cond = function()
                 return package.loaded["dap"] and require("dap").status() ~= ""
               end,
+              color = Util.ui.fg("Debug"),
             },
           },
-          lualine_y = { Util.lualine.root_dir() },
+
           lualine_z = { "location" },
         },
-
-        -- table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium")),
       }
     end,
   },
