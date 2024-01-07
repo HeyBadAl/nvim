@@ -8,7 +8,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
+    -- add LazyVim and import its pluginsj
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- NOTE: dap { extras }
@@ -44,11 +44,14 @@ require("lazy").setup({
 
     -- ESLINT
     { import = "lazyvim.plugins.extras.linting.eslint" },
+    
     -- prettier
     { import = "lazyvim.plugins.extras.formatting.prettier" },
 
+    -- UI
     { import = "lazyvim.plugins.extras.ui.edgy" },
 
+    -- vscode
     { import = "lazyvim.plugins.extras.vscode" },
 
     -- neotest
@@ -65,8 +68,8 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  install = { colorscheme = { "tokyonight" } },
+  checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
