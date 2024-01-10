@@ -74,6 +74,7 @@ return {
         "vimdoc",
         "yaml",
         "svelte",
+        "terraform",
       },
       incremental_selection = {
         enable = true,

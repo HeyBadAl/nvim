@@ -44,7 +44,7 @@ require("lazy").setup({
 
     -- ESLINT
     { import = "lazyvim.plugins.extras.linting.eslint" },
-    
+
     -- prettier
     { import = "lazyvim.plugins.extras.formatting.prettier" },
 

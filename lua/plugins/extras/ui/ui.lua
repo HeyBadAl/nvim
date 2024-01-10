@@ -5,9 +5,9 @@ return {
     event = "VimEnter",
     config = function()
       require("drop").setup({
-        theme = "summer", -- leaves, snow, stars, xmas, spring, summer
-        max = 50,
-        screensaver = 1000 * 60 * 2, -- show after 2 minutes. Set to false, to disable
+        theme = "leaves", -- leaves, snow, stars, xmas, spring, summer
+        max = 30,
+        screensaver = 1000 * 60 * 5, -- show after 2 minutes. Set to false, to disable
       })
     end,
   },
